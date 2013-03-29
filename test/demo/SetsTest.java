@@ -15,7 +15,7 @@ public class SetsTest {
 
   @Test
   public void testHashset() {
-//    Set<Integer> set= new HashSet<Integer>(Arrays.asList(1, 2, 3));
+//    Set<Integer> seta= new HashSet<Integer>(Arrays.asList(1, 2, 3));
     Set<Integer> set= Sets.newHashSet(1, 2, 3);
     set = Sets.intersection(set, Sets.newHashSet(5, 6, 7, 3));
     assertEquals(Sets.newHashSet(3), set);
@@ -24,6 +24,7 @@ public class SetsTest {
   @Test
   @SuppressWarnings("unchecked")
   public void testCartesianProduct() {
+
     Set<?> set1= Sets.newHashSet(1, 2, 3);
     Set<?> set2= Sets.newHashSet("a", "b");
 

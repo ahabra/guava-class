@@ -16,8 +16,7 @@ import com.google.common.collect.Maps;
 public class PredicateTest {
 
   List<String> names= ImmutableList.of("barack", "georgeW", "bill", "georgeH", "ronald", "jimmy");
-  
-   
+
   private List<String> findNamesWithSize(final int maxSize) {
     Predicate<String> shortNames = new Predicate<String>() {
       @Override
@@ -28,14 +27,14 @@ public class PredicateTest {
     Iterable<String> shorts = Iterables.filter(names, shortNames);
     return ImmutableList.copyOf(shorts);
   }
-  
+
   @Test
   public void testFindNamesWithSize() {
     List<String> found = findNamesWithSize(5);
     List<String> expected= ImmutableList.of("bill", "jimmy");
     assertEquals(expected, found);
   }
-  
+
   Map<String, Integer> presidents= new ImmutableMap.Builder<String, Integer>()
     .put("barack", 2008)
     .put("georgeW", 2000)
@@ -46,6 +45,7 @@ public class PredicateTest {
     .build();
 
   private Map<String, Integer> findPresidentsBefore(final int year) {
+
     Predicate<Integer> predicate = new Predicate<Integer>() {
       @Override
       public boolean apply(Integer input) {
@@ -54,7 +54,7 @@ public class PredicateTest {
     };
     return Maps.filterValues(presidents, predicate); // array.map{ #predicate }
   }
-  
+
   @Test
   public void testFindPresidentsBefore() {
     Map<String, Integer> found = findPresidentsBefore(1990);
@@ -65,6 +65,6 @@ public class PredicateTest {
       );
     assertEquals(expected, found);
   }
-  
-  
+
+
 }

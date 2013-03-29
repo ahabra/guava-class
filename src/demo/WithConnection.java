@@ -15,7 +15,7 @@ public class WithConnection {
       throw new RuntimeException(e);
     }
   }
-  
+
   private static void closeConnection(Connection con) {
     try {
       con.close();
@@ -23,7 +23,7 @@ public class WithConnection {
       e.printStackTrace();
     }
   }
-  
+
   public static <T> T execute(Function<Connection, T> closure) {
     Connection con= getConnection();
     try {
@@ -32,5 +32,5 @@ public class WithConnection {
       closeConnection(con);
     }
   }
-  
+
 }

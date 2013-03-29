@@ -10,7 +10,6 @@ import com.google.common.collect.Lists;
 
 public class PhoneDao {
 
-
   private static class PhoneSaver implements Function<Connection, Integer> {
     private Phone phone;
 

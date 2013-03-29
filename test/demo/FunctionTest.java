@@ -17,16 +17,18 @@ import com.google.common.collect.Maps;
 
 public class FunctionTest {
 
-  private static final List<String> NAMES= ImmutableList.of("barack", "georgeW", "bill", "georgeH", "ronald", "jimmy");
+  private static final List<String> NAMES=
+      ImmutableList.of("barack", "georgeW", "bill", "georgeH", "ronald", "jimmy");
 
   private List<Integer> findLength() {
-    Function<String, Integer> function = new Function<String, Integer>() {
+    Function<String, Integer> lengthFinder = new Function<String, Integer>() {
       @Override
       public Integer apply(String input) {
         return input.length();
       }
     };
-    return Lists.transform(NAMES, function);
+
+    return Lists.transform(NAMES, lengthFinder);
   }
 
 
@@ -37,25 +39,25 @@ public class FunctionTest {
   }
 
 
-  private static final Map<String, String> CAREERS= new ImmutableMap.Builder<String, String>()
+  private static final Map<String, String> CAREERS=
+        new ImmutableMap.Builder<String, String>()
     .put("Jimmy", "peanuts,submarines")
     .put("Ronald", "acting")
     .put("GeorgeH", "spy,oil")
     .put("Bill", "jennifer, paula,Elizabeth,Sally,Dolly,Hillary")
-    .put("GeorgeW", "nothing")
+    .put("GeorgeW", "sop")
     .put("Barack", "law, teaching")
     .build();
 
   private Map<String, String> buildCareers() {
     Function<String, String> function= new Function<String, String>() {
       @Override public String apply(String input) {
-        Iterable<String> splitted = Splitter.on(",").split(input);
+        Iterable<String> splitted = Splitter.on(",").trimResults().split(input);
         return Joiner.on(" and ").join(splitted) + " before becoming president";
       }
     };
 
     return Maps.transformValues(CAREERS, function);
-
   }
 
   @Test public void testBuildCareers() {
