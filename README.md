@@ -3,4 +3,4 @@ guava-class
 
 Presenting Google Guava
 
-Prsenting some of Guava features to different JUGs.
+Presenting some of Guava features to different JUGs.
