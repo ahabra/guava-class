@@ -4,6 +4,7 @@ guava-class
 Presenting Google Guava
 
 Objects:
+-------
   equal()
   toStringHelper()
   hashCode()
