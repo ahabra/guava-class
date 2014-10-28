@@ -3,25 +3,28 @@ guava-class
 
 Presenting Google Guava
 
-Objects:
+Interesting Classes
+------------------
+
+**Objects**
 
     equal()
     toStringHelper()
     hashCode()
 
-Splitter
+**Splitter**
 
-Joiner
+**Joiner**
 
-Throwables
+**Throwables**
 
-Preconditions
+**Preconditions**
 
     checkArgument()
     checkNotNull()
     checkState()
 
-Ints
+**Ints**
 
     concat(int[]...)
     contains(int[], int)
@@ -31,24 +34,24 @@ Ints
     min(int...)
     toArray(Collection<Integer>)
 
-Lists
+**Lists**
 
     newArrayList()
     partition(List<T> list, int size)
     reverse(List)
 
-Maps
+**Maps**
 
     newHashMap()
 
-Sets
+**Sets**
 
     newHashSet(E... elements)
     cartesianProduct(Set...)
 
-Multimap
+**Multimap**
 
-ImmutableList
+**ImmutableList**
 
     of(E...)
     builder()
@@ -56,37 +59,37 @@ ImmutableList
     addAll()
     build()
 
-ImmutableMap
+**ImmutableMap**
 
     of(K k1, V v1, K k2, V v2)
     builder()
     put(K, V)
     build()
 
-ImmutableSet
+**ImmutableSet**
 
     of(E...)
     builder()
     add(E...)
     build()
 
-Predicate<T>
+**Predicate<T>**
 
     boolean apply(T)
 
-Function<F,T>
+**Function<F,T>**
 
     T apply(F)
 
-Filter/Transform
+**Filter/Transform**
 
     <T> Iterable<T> filter(Iterable<T> unfiltered, Predicate<? super T> predicate)
     <F,T> Iterable<T> transform(Iterable<F> fromIterable, Function<? super F,? extends T> function)
 
-Closures
+**Closures**
 
-Hashing
+**Hashing**
 
     md5, murmure, sha256
 
-Caching
+**Caching**
